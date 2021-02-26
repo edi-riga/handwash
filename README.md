@@ -1,6 +1,6 @@
 # Hand washing movement classification
 
-This repository contains the public code of the hand washing on the PSKUS [dataset](https://zenodo.org/record/4537209). The work has been done as part of the project "Integration of reliable technologies for protection against Covid-19 in healthcare and high-risk areas", project No. VPP-COVID-2020/1-0004.
+This repository contains the public code of the hand washing movement classification on the PSKUS [dataset](https://zenodo.org/record/4537209). The work has been done as part of the project "Integration of reliable technologies for protection against Covid-19 in healthcare and high-risk areas", project No. VPP-COVID-2020/1-0004.
 
 ## References
 
