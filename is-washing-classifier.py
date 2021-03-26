@@ -1,19 +1,15 @@
 #!/usr/bin/env python3
 
 #
-# This script trains a simple network for washing / non-washing classification
+# This script trains a simple network for the binary washing / not-washing classification.
 #
 
 import matplotlib.pyplot as plt
 import numpy as np
 import os
 
-os.environ['CUDA_VISIBLE_DEVICES'] = "0"
-
 import pathlib
 import tensorflow as tf
-
-#from sklearn.utils import class_weight
 
 from tensorflow.keras.preprocessing import image_dataset_from_directory
 from tensorflow.keras.callbacks import EarlyStopping
@@ -21,8 +17,8 @@ from tensorflow.keras.callbacks import ModelCheckpoint
 from tensorflow.keras.models import load_model
 
 physical_devices = tf.config.list_physical_devices('GPU')
-print(physical_devices)
-tf.config.experimental.set_memory_growth(physical_devices[0], True)
+if len(physical_devices):
+    tf.config.experimental.set_memory_growth(physical_devices[0], True)
 
 # make sure to provide correct paths to the folders on your machine
 data_dir = pathlib.Path('./trainval_washing')
@@ -46,9 +42,10 @@ for subdir, dirs, files in os.walk(test_data_dir):
 
 print('Number of images in the test dataset: ', test_img_count)
 
-# define parameters for the dataset loader. 
-# Adjust batch size according to the memory volume of your GPU; 256 works well on NVIDIA RTX 3090 with 24 GB VRAM
-#batch_size = 256
+# Define parameters for the dataset loader.
+# Adjust batch size according to the memory volume of your GPU;
+# 16 works well on most GPU
+# 256 works well on NVIDIA RTX 3090 with 24 GB VRAM
 batch_size = 16
 img_width = 320
 img_height = 240
@@ -88,7 +85,7 @@ print(class_names)
 
 # get the number of trainval images for each class
 images_by_labels = []
-for i in range(len(class_names)): 
+for i in range(len(class_names)):
     for subdir, dirs, files in os.walk(os.path.join(data_dir,str(i))):
         n_of_files = 0
         for image_file in files:
@@ -106,7 +103,7 @@ weights_dict = {}
 for item in range(len(weights)):
     weights_dict[int(class_names[item])] = weights[item]
 
-# to improve performance, use buffered prefetching to load images 
+# to improve performance, use buffered prefetching to load images
 AUTOTUNE = tf.data.experimental.AUTOTUNE
 
 train_dataset = train_ds.prefetch(buffer_size=AUTOTUNE)
@@ -115,7 +112,7 @@ test_dataset = test_ds.prefetch(buffer_size=AUTOTUNE)
 
 
 
-# data augmentation 
+# data augmentation
 data_augmentation = tf.keras.Sequential([
   tf.keras.layers.experimental.preprocessing.RandomFlip('horizontal'),
   tf.keras.layers.experimental.preprocessing.RandomRotation(0.2),
