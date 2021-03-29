@@ -273,7 +273,7 @@ def get_frames(folder):
 def main():
     random.seed(0)
 
-    for movement in range(TOTAL_MOVEMENTS):
+    for movement in range(TOTAL_MOVEMENTS - 1):
         mk(os.path.join(output_folder, "test", str(movement)))
         mk(os.path.join(output_folder, "trainval", str(movement)))
 
