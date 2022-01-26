@@ -5,7 +5,7 @@ This repository contains code for hand washing movement classification based on 
 The work has been done as part of the projects:
 
 * "Integration of reliable technologies for protection against Covid-19 in healthcare and high-risk areas", project No. VPP-COVID-2020/1-0004.
-* Latvian Council of Science project: “Auto-mated hand washing quality control and quality evaluation system with real-time feedback”, No: lzp - Nr. 2020/2-0309
+* Latvian Council of Science project: “Automated hand washing quality control and quality evaluation system with real-time feedback”, No: lzp - Nr. 2020/2-0309
 
 
 # Quick start guide
@@ -17,7 +17,7 @@ To start working with the data, follow these steps:
 4. Train the neural network classifiers on the data.
 
 
-You are going to need a Linux OS with TensorFlow, Kerase, OpenCV, and NumPy installed to run the scripts, and a modern GPU to train the neural networks.
+You are going to need a Linux OS with TensorFlow, Keras, OpenCV, and NumPy installed to run the scripts, and a modern GPU to train the neural networks.
 
 
 # Detailed instructions
@@ -32,13 +32,13 @@ The code support the following publicly available datasets:
 
 Follow the links on the webpages to download the datasets.
 
-Once you have downloaded them, extract them, and oraganize then so that each dataset is located in a single folder.
+Once you have downloaded them, extract them, and organize then so that each dataset is located in a single folder.
 
-* The PSKUS dataset should have files "summary.csv", "statistics.csv" and folders named "DataSet1", "DataSet2" etc. in the top-level directory. Also copy the file `statistics-with-locations.csv` from this repostitory to the PSKUS dataset folder. This will ensure that vides from the same camera location will be mixed in the test and trainval folders, making the neural network generalization requirements more challenging. 
+* The PSKUS dataset should have files "summary.csv", "statistics.csv" and folders named "DataSet1", "DataSet2" etc. in the top-level directory. Also copy the file `statistics-with-locations.csv` from this repostitory to the PSKUS dataset folder. This will ensure that videos from the same camera location will be mixed in the test and trainval folders, making the neural network generalization requirements more challenging. 
 * The METC dataset should have files "summary.csv", "statistics.csv" and folders named "interface_number_1", "interface_number_2", "interface_number_3" in the top-level directory.
-* For the Kaggle dataset, you'll need to do some manual actions: see below. The resulsing dataset should be names `kaggle-dataset-6classes`.
+* For the Kaggle dataset, you'll need to do some manual actions: see below. The resulting dataset should be names `kaggle-dataset-6classes`.
 
-For the Kaggle dataset, you currently need to manually re-sort the files so that they are all put in just 7 classes. This is because the other datasets do not distinguish between right and left hand washing. Put the wrist-washing videos in the class 0 ("Other") folder.
+For the Kaggle dataset, you currently need to manually re-sort the files so that they are all put in just 7 classes. This is because the other datasets do not distinguish between right-hand and left-hand washing. Put the wrist-washing videos in the class 0 ("Other") folder.
 
 
 ## 2. Preprocessing the data
@@ -60,7 +60,7 @@ For each dataset, three training scripts are provided. (Replace `xxx` with the n
 
 * `xxx-classify-frames.py` - the baseline single-frame architecture
 * `xxx-classify-videos.py` - the time-distributed network architecture with GRU elements
-* `xxx-classify-merged-network.py` - the two-stream network architecture with both RGB and Optical Flow inputs.
+* `xxx-classify-merged-network.py` - the two-stream network architecture with both RGB and optical flow inputs
 
 These scripts rely on a number of environmenal variables to set training parameters for the neural networks.
 Unless you're fine with the default values, should set these parameters before running the scripts, e.g. with:
