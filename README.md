@@ -14,15 +14,15 @@ You are going to need a Linux OS with TensorFlow, Keras, OpenCV, and NumPy insta
 
 To start working with the data, follow these steps:
 
-0. Install prerequisites:  Python modules and the ffmpeg application. Python modules can be installed with:
+0. Install prerequisites:  Python modules and the `ffmpeg` application. Python modules can be installed with:
 
-    sudo pip install -r requirements.txt 
+       sudo pip install -r requirements.txt 
 
 1. Download and extract the required datasets. For this, you can use the scripts:
 
-    dataset-kaggle/get-and-preprocess-dataset.sh
-    dataset-pskus/get-and-preprocess-dataset.sh
-    dataset-metc/get-and-preprocess-dataset.sh
+       dataset-kaggle/get-and-preprocess-dataset.sh
+       dataset-pskus/get-and-preprocess-dataset.sh
+       dataset-metc/get-and-preprocess-dataset.sh
 
 2. Preprocess the datasets by extracting frames from the video data, separating them in classes, and further separating them in test/trainval subsets. If you used the scripts in the previous point to download the data, this was already done automatically. Otherwise use the `separate-frames.py` scripts.
 
