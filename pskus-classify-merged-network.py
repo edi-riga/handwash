@@ -13,11 +13,11 @@ import os
 import tensorflow as tf
 
 # make sure to provide correct paths to the folders on your machine
-rgb_dir = '/data/handwash/PSKUS_dataset_preprocessed/frames/trainval'
-of_dir = '/data/handwash/PSKUS_dataset_preprocessed/of/trainval'
+rgb_dir = 'dataset-pskus/PSKUS_dataset_preprocessed/frames/trainval'
+of_dir = 'dataset-pskus/PSKUS_dataset_preprocessed/of/trainval'
 
-test_rgb_dir = '/data/handwash/PSKUS_dataset_preprocessed/frames/test'
-test_of_dir = '/data/handwash/PSKUS_dataset_preprocessed/of/test'
+test_rgb_dir = 'dataset-pskus/PSKUS_dataset_preprocessed/frames/test'
+test_of_dir = 'dataset-pskus/PSKUS_dataset_preprocessed/of/test'
 
 CLASS_NAMES = [str(i) for i in range(N_CLASSES)]
 

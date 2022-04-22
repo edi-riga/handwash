@@ -12,11 +12,11 @@ from generator_rgb_with_of import merged_dataset_from_directories
 import tensorflow as tf
 
 # make sure to provide correct paths to the folders on your machine
-rgb_dir = '/data/handwash/kaggle-dataset-6classes-preprocessed/frames/trainval'
-of_dir = '/data/handwash/kaggle-dataset-6classes-preprocessed/of/trainval'
+rgb_dir = 'dataset-kaggle/kaggle-dataset-6classes-preprocessed/frames/trainval'
+of_dir = 'dataset-kaggle/kaggle-dataset-6classes-preprocessed/of/trainval'
 
-test_rgb_dir = '/data/handwash/kaggle-dataset-6classes-preprocessed/frames/test'
-test_of_dir = '/data/handwash/kaggle-dataset-6classes-preprocessed/of/test'
+test_rgb_dir = 'dataset-kaggle/kaggle-dataset-6classes-preprocessed/frames/test'
+test_of_dir = 'dataset-kaggle/kaggle-dataset-6classes-preprocessed/of/test'
 
 CLASS_NAMES = [str(i) for i in range(N_CLASSES)]
 

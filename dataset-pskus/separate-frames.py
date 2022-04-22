@@ -17,9 +17,9 @@ import csv
 import random
 
 # Change these directories to your own locations
-output_folder = '../PSKUS_dataset_preprocessed/frames/'
-video_output_folder = '../PSKUS_dataset_preprocessed/videos/'
-input_folder = '../PSKUS_dataset'
+input_folder = './PSKUS_dataset'
+output_folder = './PSKUS_dataset_preprocessed/frames/'
+video_output_folder = './PSKUS_dataset_preprocessed/videos/'
 
 snippet_extraction_file = "create_snippets.sh"
 
@@ -41,7 +41,7 @@ REACTION_TIME_FRAMES = FPS // 2
 MAX_FRAMES = 60 * FPS
 
 
-FULL_PROCESSING = False
+FULL_PROCESSING = True
 
 
 def majority_vote(lst):
@@ -257,7 +257,7 @@ def get_frames(folder, testfiles, trainvalfiles):
                 while is_success:
                     if frame_number in new_frame_numbers:
                         new_frame_num, snippet_num, code = new_frame_numbers[frame_number]
-                        print("frame {} mapped to {} snippet {}".format(frame_number, new_frame_num, snippet_num))
+                        #print("frame {} mapped to {} snippet {}".format(frame_number, new_frame_num, snippet_num))
 
                         assert code == codes[frame_number]
 
@@ -266,6 +266,10 @@ def get_frames(folder, testfiles, trainvalfiles):
                         # the name of the file storing the frames includes the frame number and the videofile name
                         save_path_and_name = os.path.join(output_folder, traintest, subfolder, filename)
                         cv2.imwrite(save_path_and_name, image)
+                    is_success, image = vidcap.read()
+                    frame_number += 1
+
+
 def main():
     random.seed(0)
 

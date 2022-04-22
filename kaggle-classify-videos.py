@@ -5,8 +5,8 @@ from dataset_utilities import get_weights_dict
 from generator_timedistributed import timedistributed_dataset_from_directory
 
 # make sure to provide correct paths to the folders on your machine
-data_dir = '/data/handwash/kaggle-dataset-6classes-preprocessed/frames/trainval'
-test_data_dir = '/data/handwash/kaggle-dataset-6classes-preprocessed/frames/test'
+data_dir = 'dataset-kaggle/kaggle-dataset-6classes-preprocessed/frames/trainval'
+test_data_dir = 'dataset-kaggle/kaggle-dataset-6classes-preprocessed/frames/test'
 
 FPS = 30
 
