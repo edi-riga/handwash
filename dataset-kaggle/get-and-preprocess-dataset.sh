@@ -13,7 +13,6 @@ wget https://github.com/atiselsts/data/raw/master/kaggle-dataset-6classes.tar
 
 echo "Extracting the dataset..."
 tar -xf kaggle-dataset-6classes.tar
-cd -
 
 echo "Preprocessing..."
 ./separate-frames.py
