@@ -91,7 +91,7 @@ The variables are:
 
 For more detailed information, see the following articles:
 
-* A. Elsts, M. Ivanovs, R. Kadikis, O. Sabelnikovs. CNN for Hand Washing Movement Classification: What Matters More — the Approach or the Dataset? In Proceedings of International Conference on Image Processing Theory, Tools and Applications (IPTA) 2022.
+* A. Elsts, M. Ivanovs, R. Kadikis, O. Sabelnikovs. CNN for Hand Washing Movement Classification: What Matters More — the Approach or the Dataset? In Proceedings of International Conference on Image Processing Theory, Tools and Applications (IPTA) 2022. [[PDF]](https://www.edi.lv/wp-content/uploads/2022/12/main.pdf)
 * M. Lulla, A. Rutkovskis, A. Slavinska, A. Vilde, A. Gromova, M. Ivanovs, A. Skadins, R. Kadikis and A. Elsts. Hand Washing Video Dataset Annotated According to the World Health Organization’s Handwashing Guidelines. Data, 6(4), p.38. [[HTML]](https://www.mdpi.com/2306-5729/6/4/38/htm)
 * M. Ivanovs, R. Kadikis, M. Lulla, A. Rutkovskis, A. Elsts, Automated Quality Assessment of Hand Washing Using Deep Learning, arXiv preprint, 2020. [[PDF]](https://arxiv.org/pdf/2011.11383.pdf)
 
